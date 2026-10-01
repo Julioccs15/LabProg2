@@ -3,21 +3,28 @@ public class RegistroTempoOnline {
     private String nomeDisciplina;
     private int tempoOnline;
     private int tempoOnlineEsperado;
-    // Construtores
+    // Construtor
     public void RegistroTempoOnline(String nomeDisciplina) {
-
+        this.nomeDisciplina = nomeDisciplina;
+        this.tempoOnlineEsperado = 120;
     }
     public void RegistroTempoOnline(String nomeDisciplina, int tempoOnlineEsperado) {
-
+        this.nomeDisciplina = nomeDisciplina;
+        this.tempoOnlineEsperado = tempoOnlineEsperado;
     }
     // Métodos
     public void adicionaTempoOnline(int tempo) {
-
+        this.tempoOnline += tempo;
     }
-    public RegistroTempoOnline(String nomeDisciplina) {
-
+    public boolean atingiuMetaTempoOnline() {
+        if (this.tempoOnline >= this.tempoOnlineEsperado) {
+            return true;
+        } else {
+            return false;
+        }
     }
-    public RegistroTempoOnline(String nomeDisciplina, int tempoOnlineEsperado) {
-
+    @Override
+    public String toString() {
+        return this.nomeDisciplina + " " + this.tempoOnline + "/" + this.tempoOnlineEsperado;
     }
 }
