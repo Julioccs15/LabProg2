@@ -1,12 +1,12 @@
 public class Descanso {
-
+    // Atributos
     private int horasDescanso;
     private int numeroSemanas;
-
+    // Construtor
     public void defineHorasDescanso(int valor) {
         this.horasDescanso = valor;
     }
-
+    // Métodos
     public void defineNumeroSemanas(int valor) {
         this.numeroSemanas = valor;
     }
@@ -19,5 +19,16 @@ public class Descanso {
         } else {
             return "cansado";
         }
+    }
+    @Override
+    public String toString() {
+        return "Status Geral de Descanso: " + getStatusGeral();
+    }
+
+    private String verif() {
+    }
+
+    public int hashCode() {
+        return getStatusGeral().hashCode();
     }
 }
