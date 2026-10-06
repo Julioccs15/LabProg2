@@ -1,3 +1,9 @@
+/**
+ * Representação do descanso, especificamente , matriculado da * UFCG. Todo aluno precisa ter uma matrícula e é identificado unicamente
+ * por esta matrícula.
+ *
+ * @author Júlio Silva
+ */
 public class Descanso {
     // Atributos
     private int horasDescanso;

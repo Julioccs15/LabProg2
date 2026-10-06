@@ -1,3 +1,9 @@
+/**
+ * Representação de uma disciplina,  da * UFCG. Todo aluno precisa ter uma matrícula e é identificado unicamente
+ * por esta matrícula.
+ *
+ * @author Júlio Silva
+ */
 public class Disciplina {
     // Atributos
     private String nomeDisciplina;
