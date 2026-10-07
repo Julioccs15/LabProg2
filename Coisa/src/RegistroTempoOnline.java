@@ -14,6 +14,7 @@ public class RegistroTempoOnline {
 
     /** Tempo online esperado para a disciplina em horas. */
     private int tempoOnlineEsperado;
+
     //Construtores
     /**
      * Constrói o registro definindo o nome da disciplina e assumindo

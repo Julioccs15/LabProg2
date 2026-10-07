@@ -7,12 +7,16 @@ import java.util.Arrays;
  */
 public class Disciplina {
     // Atributos
+    /** Nome da Disciplina. */
     private String nomeDisciplina;
+
+    /** Horas de estudo. */
     private int horasEstudo = 0;
+
+    /** Array de double para registrar as notas. */
     private double[] notas;
 
     // Construtor
-
     /**
      * Constrói a disciplina com o nome informado e inicializa
      * 4 notas com o valor zero.
@@ -22,11 +26,10 @@ public class Disciplina {
     public Disciplina(String nomeDisciplina) {
         this.nomeDisciplina = nomeDisciplina;
         this.horasEstudo = 0;
-        this.notas = new double[12];
+        this.notas = new double[4];
     }
 
     // Métodos
-
     /**
      * Cadastra horas de estudo dedicadas à disciplina de forma
      * cumulativa.

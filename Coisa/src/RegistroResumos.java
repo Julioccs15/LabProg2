@@ -5,10 +5,19 @@
  */
 public class RegistroResumos {
     // Atributos
+    /** Array de string com os temas dos resumos. */
     private String[] temas;
+
+    /** Array de string com os conteúdos textuais dos resumos. */
     private String[] conteudos;
+
+    /** Capacidade do armazenamento dos resumos. */
     private int capacidade;
+
+    /** Quantidade de resumos. */
     private int quantidade;
+
+    /** Posição posterior a última na qual foi armazenado o último resumo. */
     private int proximaPosicao;
 
     //Construtor
@@ -64,7 +73,7 @@ public class RegistroResumos {
      */
     public String imprimeResumos() {
         StringBuilder sb = new StringBuilder();
-        sb.append("- ").append(this.quantidade).append("resumo(s) cadastrado(s)\n- ");
+        sb.append("- ").append(this.quantidade).append(" resumo(s) cadastrado(s)\n- ");
         for (int i = 0; i < this.quantidade; i++) {
             sb.append(this.temas[i]);
             if (i < this.quantidade - 1) {
