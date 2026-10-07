@@ -1,6 +1,5 @@
 /**
- * Representação do descanso, especificamente , matriculado da * UFCG. Todo aluno precisa ter uma matrícula e é identificado unicamente
- * por esta matrícula.
+ * Gerencia o registro do descanso.
  *
  * @author Júlio Silva
  */
