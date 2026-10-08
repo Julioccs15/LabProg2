@@ -14,7 +14,7 @@ public class Resumo {
 
     // Construtor
     /**
-     * Cria um resumo.
+     * Contrói um resumo.
      *
      * @param tema tema do resumo.
      * @param conteudo conteúdo textual do resumo.
