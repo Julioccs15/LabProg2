@@ -1,12 +1,3 @@
-/**
- * Representação do sistema CoISA como um todo.
- * O CoISA é capaz de gerenciar o uso dos laboratórios de Ciência da Computação
- * (LCC's) e sua vida acadêmica.
- * Aqui é onde são criados efetivamente os demais objetos e respectivos métodos
- * desse sistema.
- *
- * @author Júlio Silva
- */
 public class Coisa {
     public static void main(String[] args) {
         registrarDescanso();

@@ -24,7 +24,7 @@ public class RegistroResumos {
     /**
      * Inicializa o registro de resumos com a capacidade desejada.
      *
-     * @param numeroResumos quantidade máxima de resumos armazenados
+     * @param numeroResumos quantidade máxima de resumos armazenados.
      */
     public RegistroResumos(int numeroResumos) {
         this.capacidade = numeroResumos;
@@ -93,8 +93,7 @@ public class RegistroResumos {
     }
 
     /**
-     * Adicional para conta(), mantendo compatibilidade
-     * com a especificação.
+     * Adicional para conta().
      *
      * @return total de resumos.
      */
