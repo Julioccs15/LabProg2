@@ -23,4 +23,34 @@ public class Resumo {
         this.tema = tema;
         this.conteudo = conteudo;
     }
+
+    // Métodos
+    /**
+     * Retorna o tema do resumo.
+     *
+     * @return o tema do objeto Resumo em String.
+     */
+    public String getTema() {
+        return this.tema;
+    }
+
+    /**
+     * Retorna o conteúdo do resumo.
+     *
+     * @return o conteúdo textual do objeto Resumo em String.
+     */
+    public String getConteudo() {
+        return this.conteudo;
+    }
+
+    /**
+     * Retorna a String que representa o resumo. A representação
+     * segue o formato "Tema: TEMA \nConteúdo: CONTEÚDO".
+     *
+     * @return a representação em String de um resumo.
+     */
+    @Override
+    public String toString() {
+        return "Tema: " + this.tema + "\nConteúdo: " + this.conteudo;
+    }
 }

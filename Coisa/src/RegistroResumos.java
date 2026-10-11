@@ -1,15 +1,13 @@
 /**
- * Gerencia o registro de resumos de estudos.
+ * Gerencia uma coleção de resumos.
  *
  * @author Júlio Silva
  */
 public class RegistroResumos {
     // Atributos
-    /** Array de string com os temas dos resumos. */
-    private String[] temas;
-
-    /** Array de string com os conteúdos textuais dos resumos. */
-    private String[] conteudos;
+    /** Array de resumos onde ficarão registrados os objetos do
+     * tipo Resumo. */
+    private Resumo[] resumos;
 
     /** Capacidade do armazenamento dos resumos. */
     private int capacidade;
@@ -28,8 +26,7 @@ public class RegistroResumos {
      */
     public RegistroResumos(int numeroResumos) {
         this.capacidade = numeroResumos;
-        this.temas = new String[numeroResumos];
-        this.conteudos = new String[numeroResumos];
+        this.resumos = new Resumo[numeroResumos];
         this.quantidade = 0;
         this.proximaPosicao = 0;
     }
@@ -39,12 +36,10 @@ public class RegistroResumos {
      * Adiciona um novo resumo. Substitui o mais antigo se a capacidade
      * estiver cheia.
      *
-     * @param tema tema do resumo.
-     * @param conteudo conteúdo textual do resumo.
+     * @param resumo objeto Resumo a ser adicionado.
      */
-    public void adiciona(String tema, String conteudo) {
-        this.temas[this.proximaPosicao] = tema;
-        this.conteudos[this.proximaPosicao] = conteudo;
+    public void adiciona(Resumo resumo) {
+        this.resumos[this.proximaPosicao] = resumo;
 
         if (this.quantidade < this.capacidade) {
             this.quantidade++;
