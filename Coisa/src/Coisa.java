@@ -5,7 +5,6 @@ public class Coisa {
         registrarTempoOnline();
         System.out.println("-----");
         controlarDisciplina();
-
         System.out.println("-----");
         registrarResumos();
     }
@@ -48,16 +47,15 @@ public class Coisa {
     }
     private static void registrarResumos() {
         RegistroResumos meusResumos = new RegistroResumos(100);  // 100 resumos
-        Resumo r1 = new Resumo("Classes", "Classes definem um tipo e a base de código para criação de objetos.");
-        meusResumos.adiciona(r1);
-        Resumo r2 = new Resumo("Tipo", "Identifica a semântica (operações e significados) de um conjunto de dados.");
-        meusResumos.adiciona(r2);
+
+        meusResumos.adiciona("Classes", "Classes definem um tipo e a base de código para criação de objetos.");
+        meusResumos.adiciona("Tipo", "Identifica a semântica (operações e significados) de um conjunto de dados.");
 
 
         String[] resumos = meusResumos.pegaResumos();
 
 
-        for (int i = 0; i < meusResumos.contaResumos(); i++) {
+        for (int i = 0; i < meusResumos.conta(); i++) {
             System.out.println(resumos[i]);
         }
 
@@ -69,3 +67,4 @@ public class Coisa {
         System.out.println(meusResumos.temResumo("Objetos"));
     }
 }
+

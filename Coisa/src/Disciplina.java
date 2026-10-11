@@ -82,6 +82,7 @@ public class Disciplina {
      * @return no formato "NOME_DISCIPLINA horas media
      * [nota1, nota2, nota3, nota4]"
      */
+    @Override
     public String toString() {
         return this.nomeDisciplina + " " + this.horasEstudo + " " + calculaMedia() + " " + Arrays.toString(this.notas);
     }

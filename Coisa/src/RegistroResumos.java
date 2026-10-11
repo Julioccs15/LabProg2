@@ -5,20 +5,29 @@
  */
 public class RegistroResumos {
     // Atributos
-    /** Array de resumos onde ficarão registrados os objetos do
-     * tipo Resumo. */
+    /**
+     * Array de resumos onde ficarão registrados os objetos do
+     * tipo Resumo.
+     */
     private Resumo[] resumos;
 
-    /** Capacidade do armazenamento dos resumos. */
+    /**
+     * Capacidade do armazenamento dos resumos.
+     */
     private int capacidade;
 
-    /** Quantidade de resumos. */
+    /**
+     * Quantidade de resumos.
+     */
     private int quantidade;
 
-    /** Posição posterior a última na qual foi armazenado o último resumo. */
+    /**
+     * Posição posterior a última na qual foi armazenado o último resumo.
+     */
     private int proximaPosicao;
 
     //Construtor
+
     /**
      * Inicializa o registro de resumos com a capacidade desejada.
      *
@@ -32,19 +41,25 @@ public class RegistroResumos {
     }
 
     // Métodos
+
     /**
-     * Adiciona um novo resumo. Substitui o mais antigo se a capacidade
-     * estiver cheia.
+     * Adiciona um novo resumo apenas se não houver outro resumo com o
+     * mesmo tema e substitui o mais antigo se a capacidade estiver cheia.
      *
-     * @param resumo objeto Resumo a ser adicionado.
+     * @param tema tema do resumo a ser adicionado
+     * @param conteudo conteúdo textual do resumo a ser adicionado
      */
-    public void adiciona(Resumo resumo) {
-        this.resumos[this.proximaPosicao] = resumo;
+    public void adiciona(String tema, String conteudo) {
+        Resumo resumoNovo = new Resumo(tema, conteudo);
+        if (!(temResumo(tema))) {
+            this.resumos[this.proximaPosicao] = resumoNovo;
+        }
 
         if (this.quantidade < this.capacidade) {
             this.quantidade++;
         }
-        if (this.proximaPosicao > this.capacidade - 1) {
+
+        if (this.proximaPosicao == this.capacidade - 1) {
             this.proximaPosicao = 0;
         } else {
             this.proximaPosicao++;
@@ -85,7 +100,7 @@ public class RegistroResumos {
      *
      * @return total de resumos.
      */
-    public int contaResumos() {
+    public int conta() {
         return this.quantidade;
     }
 
@@ -93,12 +108,13 @@ public class RegistroResumos {
      * Verifica se existe algum resumo cadastrado com determinado
      * tema.
      *
-     * @param tema tema a ser procurado.
-     * @return true se encontrado, false caso contrário.
+     * @param tema string tema que irá ser procurado no array de resumos
+     *
+     * @return true se houver, false caso contrário
      */
     public boolean temResumo(String tema) {
-        for (int i = 0; i < this.quantidade; i++) {
-            if (resumos[i].getTema() != null && resumos[i].getTema().equals(tema)) {
+        for (Resumo resumo : this.resumos) {
+            if (resumo != null && resumo.getTema().equals(tema)) {
                 return true;
             }
         }
