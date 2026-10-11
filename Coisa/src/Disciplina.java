@@ -16,7 +16,13 @@ public class Disciplina {
     /** Array de double para registrar as notas. */
     private double[] notas;
 
-    // Construtor
+    /** Array de pesos das notas. */
+    private int[] pesos;
+
+    /** Número de notas. */
+    private int numeroNotas;
+
+    // Construtores
     /**
      * Constrói a disciplina com o nome informado, inicializa
      * 4 notas com o valor zero e as horas de estudo também como zero.
@@ -27,6 +33,45 @@ public class Disciplina {
         this.nomeDisciplina = disciplina;
         this.horasEstudo = 0;
         this.notas = new double[4];
+        this.pesos = new int[]{1, 1, 1, 1};
+        this.numeroNotas = 4;
+    }
+
+    /**
+     * Constrói a disciplina com o nome informado e a quantidade de notas,
+     * inicializa as notas com o valor zero e as horas de estudo também
+     * como zero.
+     *
+     * @param disciplina nome da disciplina
+     * @param numeroNotas o número de notas
+     */
+    public Disciplina(String disciplina,int numeroNotas) {
+        this.nomeDisciplina = disciplina;
+        this.horasEstudo = 0;
+        this.notas = new double[numeroNotas];
+        this.numeroNotas = numeroNotas;
+        this.pesos = new int[numeroNotas];
+        for (int i = 0; i < numeroNotas; i++) {
+            pesos[i] = 1;
+        }
+    }
+
+    /**
+     * Constrói a disciplina com o nome informado, a quantidade de notas,
+     * e os pesos, inicializa as notas com o valor zero e as horas de
+     * estudo também como zero.
+     *
+     * @param disciplina nome da disciplina
+     * @param numeroNotas o número de notas
+     * @param pesos array de inteiros no qual são registrados os pesos
+     * correspondentes às notas
+     */
+    public Disciplina(String disciplina, int numeroNotas, int[] pesos) {
+        this.nomeDisciplina = disciplina;
+        this.horasEstudo = 0;
+        this.notas = new double[numeroNotas];
+        this.pesos = pesos;
+        this.numeroNotas = numeroNotas;
     }
 
     // Métodos
@@ -54,16 +99,18 @@ public class Disciplina {
     }
 
     /**
-     * Calcula a média aritmética das 4 notas.
+     * Calcula a média ponderada das notas.
      *
      * @return valor da média
      */
     private double calculaMedia() {
-        double soma = 0;
-        for (double n : this.notas) {
-            soma += n;
+        double somaNotas = 0;
+        double somaPesos = 0;
+        for (int i = 0; i < this.numeroNotas; i++) {
+            somaNotas += notas[i] * pesos[i];
+            somaPesos += pesos[i];
         }
-        return soma / 4;
+        return somaNotas / somaPesos;
     }
 
     /**
