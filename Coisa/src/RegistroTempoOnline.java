@@ -20,7 +20,7 @@ public class RegistroTempoOnline {
      * Constrói o registro definindo o nome da disciplina e assumindo
      * o tempo esperado padrão de 120 horas.
      *
-     * @param nomeDisciplina o nome da disciplina.
+     * @param nomeDisciplina o nome da disciplina
      */
     public RegistroTempoOnline(String nomeDisciplina) {
         this.nomeDisciplina = nomeDisciplina;
@@ -29,8 +29,8 @@ public class RegistroTempoOnline {
     /**
      * Constrói o registro definindo o nome da disciplina e o tempo esperado.
      *
-     * @param nomeDisciplina o nome da disciplina.
-     * @param tempoOnlineEsperado a quantidade de horas online esperada.
+     * @param nomeDisciplina o nome da disciplina
+     * @param tempoOnlineEsperado a quantidade de horas online esperada
      */
     public RegistroTempoOnline(String nomeDisciplina, int tempoOnlineEsperado) {
         this.nomeDisciplina = nomeDisciplina;
@@ -39,9 +39,9 @@ public class RegistroTempoOnline {
 
     // Métodos
     /**
-     * Adiciona horas de estudo online ao total acumulado.
+     * Adiciona horas de estudo online ao total acumulado
      *
-     * @param tempo quantidade de horas a adicionar.
+     * @param tempo quantidade de horas a adicionar
      */
     public void adicionaTempoOnline(int tempo) {
         this.tempoOnline += tempo;

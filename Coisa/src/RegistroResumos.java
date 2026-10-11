@@ -9,29 +9,19 @@ import java.util.List;
  */
 public class RegistroResumos {
     // Atributos
-    /**
-     * Array de resumos onde ficarão registrados os objetos do
-     * tipo Resumo.
-     */
+    /** Array de resumos onde ficarão registrados os objetos do tipo Resumo. */
     private Resumo[] resumos;
 
-    /**
-     * Capacidade do armazenamento dos resumos.
-     */
+    /** Capacidade do armazenamento dos resumos. */
     private int capacidade;
 
-    /**
-     * Quantidade de resumos.
-     */
+    /** Quantidade de resumos. */
     private int quantidade;
 
-    /**
-     * Posição posterior a última na qual foi armazenado o último resumo.
-     */
+    /** Posição posterior à última na qual foi armazenado o último resumo. */
     private int proximaPosicao;
 
     //Construtor
-
     /**
      * Inicializa o registro de resumos com a capacidade desejada.
      *
@@ -45,7 +35,6 @@ public class RegistroResumos {
     }
 
     // Métodos
-
     /**
      * Adiciona um novo resumo apenas se não houver outro resumo com o
      * mesmo tema e substitui o mais antigo se a capacidade estiver cheia.
@@ -73,7 +62,7 @@ public class RegistroResumos {
     /**
      * Retorna um array com os resumos formatados ("Tema: Conteúdo").
      *
-     * @return array de Strings dos resumos.
+     * @return array de Strings dos resumos
      */
     public String[] pegaResumos() {
         String[] resultado = new String[this.quantidade];
@@ -86,7 +75,7 @@ public class RegistroResumos {
     /**
      * Retorna uma String com o total e os temas dos resumos cadastrados.
      *
-     * @return texto formatado contendo a contagem e os temas.
+     * @return texto formatado contendo a contagem e os temas
      */
     public String imprimeResumos() {
         String resultado = "- " + this.quantidade + " resumo(s) cadastrado(s)\n- ";
@@ -102,7 +91,7 @@ public class RegistroResumos {
     /**
      * Retorna a quantidade atual de resumos armazenados.
      *
-     * @return total de resumos.
+     * @return total de resumos
      */
     public int conta() {
         return this.quantidade;

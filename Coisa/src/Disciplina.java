@@ -38,9 +38,8 @@ public class Disciplina {
     }
 
     /**
-     * Constrói a disciplina com o nome informado e a quantidade de notas,
-     * inicializa as notas com o valor zero e as horas de estudo também
-     * como zero.
+     * Constrói a disciplina com o nome informado e com a quantidade de notas,
+     * inicializa as notas com o valor zero e as horas de estudo também como zero.
      *
      * @param disciplina nome da disciplina
      * @param numeroNotas o número de notas
@@ -132,8 +131,8 @@ public class Disciplina {
     /**
      * Retorna a representação em String da disciplina.
      *
-     * @return no formato "NOME_DISCIPLINA horas media
-     * [nota1, nota2, nota3, nota4]"
+     * @return no formato "Nome_Disciplina horas media
+     * [nota1, nota2, ..., notaN]"
      */
     @Override
     public String toString() {

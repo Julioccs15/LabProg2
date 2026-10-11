@@ -1,5 +1,3 @@
-import java.util.Objects;
-
 /**
  * Representa um resumo composto por tema e conteúdo textual.
  *
