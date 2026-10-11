@@ -86,14 +86,14 @@ public class Disciplina {
     }
 
     /**
-     * Cadastra uma nota (de 1 a 4). Caso a nota seja recadastrada,
+     * Cadastra uma nota. Caso a nota seja recadastrada,
      * o novo valor substitui o anterior.
      *
-     * @param nota posição da nota (1 a 4)
+     * @param nota posição da nota
      * @param valorNota valor da nota
      */
     public void cadastraNota(int nota, double valorNota) {
-        if (nota >= 1 && nota <= 4) {
+        if (nota >= 1 && nota <= this.numeroNotas) {
             this.notas[nota - 1] = valorNota;
         }
     }
@@ -104,13 +104,19 @@ public class Disciplina {
      * @return valor da média
      */
     private double calculaMedia() {
-        double somaNotas = 0;
-        double somaPesos = 0;
-        for (int i = 0; i < this.numeroNotas; i++) {
-            somaNotas += notas[i] * pesos[i];
-            somaPesos += pesos[i];
+        if (this.pesos.length == this.numeroNotas) {
+            double somaNotas = 0;
+            double somaPesos = 0;
+            for (int i = 0; i < this.numeroNotas; i++) {
+                somaNotas += this.notas[i] * this.pesos[i];
+                somaPesos += this.pesos[i];
+            }
+
+            if (somaPesos != 0 && somaNotas != 0) {
+                return somaNotas / somaPesos;
+            }
         }
-        return somaNotas / somaPesos;
+        return 0.0;
     }
 
     /**

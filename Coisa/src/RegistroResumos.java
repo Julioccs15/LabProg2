@@ -57,16 +57,16 @@ public class RegistroResumos {
         Resumo resumoNovo = new Resumo(tema, conteudo);
         if (!(temResumo(tema))) {
             this.resumos[this.proximaPosicao] = resumoNovo;
-        }
 
-        if (this.quantidade < this.capacidade) {
-            this.quantidade++;
-        }
+            if (this.quantidade < this.capacidade) {
+                this.quantidade++;
+            }
 
-        if (this.proximaPosicao == this.capacidade - 1) {
-            this.proximaPosicao = 0;
-        } else {
-            this.proximaPosicao++;
+            if (this.proximaPosicao == this.capacidade - 1) {
+                this.proximaPosicao = 0;
+            } else {
+                this.proximaPosicao++;
+            }
         }
     }
 
