@@ -30,7 +30,7 @@ public class Resumo {
     /**
      * Retorna o tema do resumo.
      *
-     * @return o tema do objeto Resumo em String.
+     * @return o tema do objeto Resumo em String
      */
     public String getTema() {
         return this.tema;
@@ -47,7 +47,7 @@ public class Resumo {
 
     /**
      * Retorna a String que representa o resumo. A representação
-     * segue o formato "Tema: TEMA \nConteúdo: CONTEÚDO".
+     * segue o formato "TEMA: CONTEÚDO".
      *
      * @return a representação em String de um resumo
      */
@@ -55,6 +55,7 @@ public class Resumo {
     public String toString() {
         return this.tema + ": " +  this.conteudo;
     }
+
     /**
      * Redefine qual (ou quais) atributo(s) que representam o resumo
      * para fins de comparação entre objetos. Nesse caso, o que o

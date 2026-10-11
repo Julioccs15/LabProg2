@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 /**
  * Gerencia uma coleção de resumos.
  *
@@ -109,7 +113,6 @@ public class RegistroResumos {
      * tema.
      *
      * @param tema string tema que irá ser procurado no array de resumos
-     *
      * @return true se houver, false caso contrário
      */
     public boolean temResumo(String tema) {
@@ -119,5 +122,49 @@ public class RegistroResumos {
             }
         }
         return false;
+    }
+
+    /**
+     * Busca uma parte de texto nos conteúdos dos resumos cadastrados e retorna
+     * um array de strings contendo os temas dos resumos nos quais foram
+     * encontrados o trecho inserido como parâmetro.
+     *
+     * @param chaveDeBusca é a parte de texto que será procurado nos resumos
+     * @return array de strings contendo o(s) tema(s) do(s) resumo(s) que
+     * foi(ram) encontrada(s) a(s) semelhança(s)
+     */
+    public String[] busca(String chaveDeBusca) {
+        // Lista temporária para armazenar os temas encontrados
+        List<String> temasEncontrados = new ArrayList<>();
+
+        // Se a chave for nula ou vazia, podemos retornar um array vazio
+        if (chaveDeBusca == null || chaveDeBusca.isEmpty()) {
+            return new String[0];
+        }
+
+        // Padroniza a chave de busca para letras minúsculas (ignora maiúsculas/minúsculas)
+        String chaveMinuscula = chaveDeBusca.toLowerCase();
+
+        // Percorre o array considerando apenas os elementos válidos/cadastrados (quantidade)
+        for (int i = 0; i < this.quantidade; i++) {
+            Resumo resumo = this.resumos[i];
+
+            if (resumo != null && resumo.getConteudo() != null) {
+                // Padroniza o conteúdo do resumo para minúsculas para a comparação
+                String conteudoMinusculo = resumo.getConteudo().toLowerCase();
+
+                // Verifica se a chave faz parte do conteúdo
+                if (conteudoMinusculo.contains(chaveMinuscula)) {
+                    // Adiciona o tema correspondente à lista
+                    temasEncontrados.add(resumo.getTema());
+                }
+            }
+        }
+
+        // Ordena a lista em ordem alfabética/lexicográfica
+        Collections.sort(temasEncontrados);
+
+        // Converte a List<String> para um array de String[] e o retorna
+        return temasEncontrados.toArray(new String[0]);
     }
 }
