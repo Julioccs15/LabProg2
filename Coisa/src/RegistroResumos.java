@@ -44,8 +44,11 @@ public class RegistroResumos {
         if (this.quantidade < this.capacidade) {
             this.quantidade++;
         }
-
-        this.proximaPosicao = (this.proximaPosicao + 1) % this.capacidade;
+        if (this.proximaPosicao > this.capacidade - 1) {
+            this.proximaPosicao = 0;
+        } else {
+            this.proximaPosicao++;
+        }
     }
 
     /**
@@ -56,7 +59,7 @@ public class RegistroResumos {
     public String[] pegaResumos() {
         String[] resultado = new String[this.quantidade];
         for (int i = 0; i < this.quantidade; i++) {
-            resultado[i] = this.temas[i] + ": " + this.conteudos[i];
+            resultado[i] = resumos[i].toString();
         }
         return resultado;
     }
@@ -67,15 +70,14 @@ public class RegistroResumos {
      * @return texto formatado contendo a contagem e os temas.
      */
     public String imprimeResumos() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("- ").append(this.quantidade).append(" resumo(s) cadastrado(s)\n- ");
+        String resultado = "- " + this.quantidade + " resumo(s) cadastrado(s)\n- ";
         for (int i = 0; i < this.quantidade; i++) {
-            sb.append(this.temas[i]);
+            resultado += resumos[i].getTema();
             if (i < this.quantidade - 1) {
-                sb.append(" | ");
+                resultado += " | ";
             }
         }
-        return sb.toString();
+        return resultado;
     }
 
     /**
@@ -83,17 +85,8 @@ public class RegistroResumos {
      *
      * @return total de resumos.
      */
-    public int conta() {
-        return this.quantidade;
-    }
-
-    /**
-     * Adicional para conta().
-     *
-     * @return total de resumos.
-     */
     public int contaResumos() {
-        return conta();
+        return this.quantidade;
     }
 
     /**
@@ -105,7 +98,7 @@ public class RegistroResumos {
      */
     public boolean temResumo(String tema) {
         for (int i = 0; i < this.quantidade; i++) {
-            if (this.temas[i] != null && this.temas[i].equals(tema)) {
+            if (resumos[i].getTema() != null && resumos[i].getTema().equals(tema)) {
                 return true;
             }
         }

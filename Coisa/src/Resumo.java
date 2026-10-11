@@ -51,6 +51,6 @@ public class Resumo {
      */
     @Override
     public String toString() {
-        return "Tema: " + this.tema + "\nConteúdo: " + this.conteudo;
+        return this.tema + ": " +  this.conteudo;
     }
 }
